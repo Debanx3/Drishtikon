@@ -7,6 +7,6 @@
 - Mainboard
   - ![Mainboard](https://github.com/Debanx3/Drishtikon/blob/main/Documents/Mainboard_3D-removebg-preview.png)
 * Controller
-  - ![Controller]()
+  - ![Controller](https://github.com/Debanx3/Drishtikon/blob/main/Documents/Controller_3D-removebg-preview.png)
 + Power-supply
   - ![Power supply]()
