@@ -6,7 +6,13 @@
   - ![Drishtikon](https://github.com/Debanx3/Drishtikon/blob/main/Documents/cap_logo.png)
 - Mainboard
   - ![Mainboard](https://github.com/Debanx3/Drishtikon/blob/main/Documents/Mainboard_3D-removebg-preview.png)
+  - ![Mainboard](https://github.com/Debanx3/Drishtikon/blob/main/Documents/)
+  - ![Mainboard](https://github.com/Debanx3/Drishtikon/blob/main/Documents/)
 * Controller
   - ![Controller](https://github.com/Debanx3/Drishtikon/blob/main/Documents/Controller_3D-removebg-preview.png)
+  - ![Controller](https://github.com/Debanx3/Drishtikon/blob/main/Documents/)
+  - ![Controller](https://github.com/Debanx3/Drishtikon/blob/main/Documents/)
 + Power-supply
-  - ![Power supply]()
+  - ![Power supply](https://github.com/Debanx3/Drishtikon/blob/main/Documents/power-removebg-preview.png)
+  - ![Power supply](https://github.com/Debanx3/Drishtikon/blob/main/Documents/)
+  - ![Power supply](https://github.com/Debanx3/Drishtikon/blob/main/Documents/)
