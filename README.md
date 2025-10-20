@@ -9,16 +9,16 @@
   - ![Mainboard_PCB](https://github.com/Debanx3/Drishtikon/blob/main/Documents/WhatsApp%20Image%202025-10-20%20at%2014.41.27_4e0a38e9.jpg)
 - Mainboard
   - ![Mainboard](https://github.com/Debanx3/Drishtikon/blob/main/Documents/Mainboard_3D-removebg-preview.png)
-  - ![Mainboard](https://github.com/Debanx3/Drishtikon/blob/main/Documents/pic3.png)
-  - ![Mainboard](https://github.com/Debanx3/Drishtikon/blob/main/Documents/pic4.png)
+ <!--- ![Mainboard](https://github.com/Debanx3/Drishtikon/blob/main/Documents/pic3.png)-->
+ <!--- ![Mainboard](https://github.com/Debanx3/Drishtikon/blob/main/Documents/pic4.png)-->
   - ![Mainboard](https://github.com/Debanx3/Drishtikon/blob/main/Documents/pic9.png)
 * Controller
   - ![Controller](https://github.com/Debanx3/Drishtikon/blob/main/Documents/Controller_3D-removebg-preview.png)
-  - ![Controller](https://github.com/Debanx3/Drishtikon/blob/main/Documents/pic6.png)
-  - ![Controller](https://github.com/Debanx3/Drishtikon/blob/main/Documents/pic7.png)
+  <!--- ![Controller](https://github.com/Debanx3/Drishtikon/blob/main/Documents/pic6.png)-->
+  <!--- ![Controller](https://github.com/Debanx3/Drishtikon/blob/main/Documents/pic7.png)-->
   - ![Controller](https://github.com/Debanx3/Drishtikon/blob/main/Documents/pic8.png)
 + Power-supply
   - ![Power supply](https://github.com/Debanx3/Drishtikon/blob/main/Documents/power-removebg-preview.png)
-  - ![Power supply](https://github.com/Debanx3/Drishtikon/blob/main/Documents/pic10.png)
-  - ![Power supply](https://github.com/Debanx3/Drishtikon/blob/main/Documents/pic11.png)
+  <!--- ![Power supply](https://github.com/Debanx3/Drishtikon/blob/main/Documents/pic10.png)-->
+  <!--- ![Power supply](https://github.com/Debanx3/Drishtikon/blob/main/Documents/pic11.png)-->
   - ![Power supply](https://github.com/Debanx3/Drishtikon/blob/main/Documents/pic12.png)
