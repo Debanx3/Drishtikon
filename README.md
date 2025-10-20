@@ -5,7 +5,7 @@
 - Mainboard
   - ![Drishtikon](https://github.com/Debanx3/Drishtikon/blob/main/Documents/cap_logo.png)
 - Mainboard
-  - ![Mainboard]()
+  - ![Mainboard](https://github.com/Debanx3/Drishtikon/blob/main/Documents/Mainboard_3D-removebg-preview.png)
 * Controller
   - ![Controller]()
 + Power-supply
