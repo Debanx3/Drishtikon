@@ -7,6 +7,8 @@
   - <img src="https://github.com/Debanx3/Drishtikon/blob/main/Documents/picx.jpg" alt="Mainboard PCB" width="250" height="250">
   - <img src="https://github.com/Debanx3/Drishtikon/blob/main/Documents/picy.jpg" alt="Mainboard PCB" width="250" height="250">
   - <img src="https://github.com/Debanx3/Drishtikon/blob/main/Documents/WhatsApp%20Image%202025-10-20%20at%2014.41.27_4e0a38e9.jpg" alt="Mainboard PCB" width="250" height="250">
+  - <img src=" " alt="Mainboard PCB" width="250" height="250">
+  - <img src=" " alt="Mainboard PCB" width="250" height="250">
   </div>
 + Mainboard: Runs an algorithm which is responsible for capturing the heat map of the FOV and considers the LUX values, to decide which load to powerup and sends the message via BLE to the controller.<br> <br>
   <div>
