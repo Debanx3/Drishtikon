@@ -10,19 +10,4 @@
   - <img src="https://github.com/Debanx3/Drishtikon/blob/main/Documents/pind.jpg" alt="Mainboard PCB" width="250" height="250">
   - <img src="https://github.com/Debanx3/Drishtikon/blob/main/Documents/pinda.jpg" alt="Mainboard PCB" width="250" height="250">
   </div>
-+ Mainboard: Runs an algorithm which is responsible for capturing the heat map of the FOV and considers the LUX values, to decide which load to powerup and sends the message via BLE to the controller.<br> <br>
-  <div>
-  - <img src="https://github.com/Debanx3/Drishtikon/blob/main/Documents/Mainboard_3D-removebg-preview.png" alt="Drishtikon" width="250" height="250">
-  - <img src="https://github.com/Debanx3/Drishtikon/blob/main/Documents/pic9.png" alt="Drishtikon" width="250" height="250">
-  </div>
-+ Controller:  Runs an algorithm which is responsible for fetching the message via BLE from the mainboard and in turn powers up the connected AC loads.<br> <br>
-  <div>
-  - <img src="https://github.com/Debanx3/Drishtikon/blob/main/Documents/Controller_3D-removebg-preview.png" width="250" height="250">
-  - <img src="https://github.com/Debanx3/Drishtikon/blob/main/Documents/pic8.png" width="250" height="250">
-  </div>
-+ Power-supply: AC-DC power supply for powering both the modules via mains 230VAC. Both mainboard and controller have each power supply of their own in the casing.<br> <br>
-  <div>
-  - <img src="https://github.com/Debanx3/Drishtikon/blob/main/Documents/power-removebg-preview.png" width="250" height="250">
-  - <img src="https://github.com/Debanx3/Drishtikon/blob/main/Documents/pic12.png" width="250" height="250">
-  </div>
 
