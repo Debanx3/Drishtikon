@@ -7,6 +7,7 @@
   <img src="https://github.com/Debanx3/Drishtikon/blob/main/Elements/feed_1.png" alt="Mainboard PCB" width="250" height="250">
   <img src="https://github.com/Debanx3/Drishtikon/blob/main/Elements/fac.jpg" alt="Mainboard PCB" width="250" height="250">
   <img src="https://github.com/Debanx3/Drishtikon/blob/main/Elements/feed_3.png" alt="Mainboard PCB" width="250" height="250">
-  <img src="https://github.com/Debanx3/Drishtikon/blob/main/Elements/pic4.png" alt="Mainboard PCB" width="320" height="320">
+  <img src="https://github.com/Debanx3/Drishtikon/blob/main/Elements/pic4.png" alt="Mainboard PCB" width="315" height="320">
+  <img src="https://github.com/Debanx3/Drishtikon/blob/main/Elements/picx.jpg" alt="Mainboard PCB" width="215" height="200">
   </div>
 
