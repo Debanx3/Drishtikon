@@ -11,5 +11,5 @@
   <img src="https://github.com/Debanx3/Drishtikon/blob/main/Elements/picx.jpg" alt="Mainboard PCB" width="215" height="200">
   </div>
 
-* License (Optional): MIT License
+* License: MIT License
 * Contact/Credits: Debanil Chanda, [DebanX3@github.com](mailto:debanx3@github.com)
