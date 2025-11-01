@@ -9,9 +9,6 @@
   <img src="https://github.com/Debanx3/Drishtikon/blob/main/Elements/feed_3.png" alt="Mainboard PCB" width="155" height="155">
   <img src="https://github.com/Debanx3/Drishtikon/blob/main/Elements/pic4.png" alt="Mainboard PCB" width="205" height="205">
   <img src="https://github.com/Debanx3/Drishtikon/blob/main/Elements/picx.jpg" alt="Mainboard PCB" width="175" height="125">
-  <img src="https://github.com/Debanx3/Drishtikon/blob/main/Elements/bix.png" alt="Mainboard PCB" width="230" height="230">
-  <img src="https://github.com/Debanx3/Drishtikon/blob/main/Elements/bobu.png" alt="Mainboard PCB" width="230" height="230">
-  <img src="https://github.com/Debanx3/Drishtikon/blob/main/Elements/boba.png" alt="Mainboard PCB" width="230" height="230">
   <img src="https://github.com/Debanx3/Drishtikon/blob/main/Elements/greydata.png" alt="Mainboard PCB" width="220" height="220">
   </div>
 
