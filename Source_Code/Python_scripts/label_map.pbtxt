@@ -1,0 +1,5 @@
+# label_map.pbtxt content
+item {
+  id: 1
+  name: 'human_annotation'
+}
