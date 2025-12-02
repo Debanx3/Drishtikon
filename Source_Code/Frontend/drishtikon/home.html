@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Home Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121212; 
+        }
+        .custom-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scroll::-webkit-scrollbar-track {
+            background: #2d2d2d; 
+            border-radius: 4px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: #555; 
+            border-radius: 4px;
+        }
+        .scanlines {
+            background: linear-gradient(
+                to bottom,
+                rgba(255,255,255,0),
+                rgba(255,255,255,0) 50%,
+                rgba(0,0,0,0.2) 50%,
+                rgba(0,0,0,0.2)
+            );
+            background-size: 100% 4px;
+            pointer-events: none;
+        }
+        .terminal-font {
+            font-family: 'Fira Code', monospace;
+        }
+        .terminal-text {
+            font-size: 9px;
+            line-height: 1.4;
+            color: #b0b0b0;
+        }
+    </style>
+</head>
+<body class="text-white min-h-screen flex justify-center bg-black">
+    <div class="w-full max-w-md bg-[#1E1E1E] min-h-screen relative flex flex-col shadow-2xl overflow-hidden">
+        <div class="h-2 w-full bg-purple-600"></div>
+        <div class="px-6 pt-6 pb-2">
+            <h1 class="text-3xl font-normal">
+                Hi <span class="font-bold text-purple-600">Debanil</span>
+            </h1>
+            <p class="text-gray-400 text-sm mt-2 leading-snug">
+                Sync your network with the app for real-time monitoring heat map
+            </p>
+        </div>
+        <div class="px-6 mt-6 flex items-center justify-between">
+            <h2 class="text-lg font-bold">LUX available</h2>
+            <div class="bg-[#2C2C2C] rounded-lg px-3 py-2 flex items-center space-x-3 border border-gray-700">
+                <div class="text-xs text-gray-400">
+                    <div class="uppercase font-bold tracking-wide text-[10px]">OPT3001 ROOM</div>
+                    <div class="text-white font-bold text-sm flex items-center gap-2">
+                        455788 
+                        <span class="text-[10px] font-normal text-gray-300">Synced</span>
+                        <i class="ph-fill ph-check-circle text-gray-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="px-6 mt-6 flex flex-col overflow-hidden">
+            <div class="flex items-center justify-between mb-3">
+                <h2 class="text-lg font-bold">Devices available</h2>
+                <button id="zoom-toggle-btn" onclick="toggleDeviceZoom()" class="p-1.5 bg-[#3A3A3A] hover:bg-[#4a4a4a] rounded-lg text-gray-300 transition-colors focus:outline-none" title="Toggle Detailed View">
+                    <i id="zoom-icon" class="ph-bold ph-magnifying-glass-plus text-lg"></i>
+                </button>
+            </div>
+            <div class="relative pl-2 border-l-4 border-gray-600/30 flex-1 overflow-hidden">
+                <div id="devices-standard-view" class="grid grid-cols-2 gap-3 max-h-[280px] overflow-y-auto pr-1 custom-scroll transition-opacity duration-300">
+                    <div class="bg-[#2C2C2C] p-3 rounded-xl border border-gray-700 flex flex-col justify-center">
+                        <div class="text-[10px] text-gray-500 mb-1">ID: 1344295024</div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-sm">Light 1</span>
+                            <div class="flex items-center gap-1">
+                                <span class="text-[9px] text-gray-400">Synced</span>
+                                <i class="ph-fill ph-check-circle text-gray-400 text-xs"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-[#2C2C2C] p-3 rounded-xl border border-gray-700 flex flex-col justify-center">
+                        <div class="text-[10px] text-gray-500 mb-1">ID: 1344295024</div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-sm">Light 2</span>
+                            <div class="flex items-center gap-1">
+                                <span class="text-[9px] text-gray-400">Synced</span>
+                                <i class="ph-fill ph-check-circle text-gray-400 text-xs"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-[#2C2C2C] p-3 rounded-xl border border-gray-700 flex flex-col justify-center">
+                        <div class="text-[10px] text-gray-500 mb-1">ID: 1344295024</div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-sm">Light 3</span>
+                            <div class="flex items-center gap-1">
+                                <span class="text-[9px] text-gray-400">Synced</span>
+                                <i class="ph-fill ph-check-circle text-gray-400 text-xs"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-[#2C2C2C] p-3 rounded-xl border border-gray-700 flex flex-col justify-center">
+                        <div class="text-[10px] text-gray-500 mb-1">ID: 1344295024</div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-sm">Light 4</span>
+                            <div class="flex items-center gap-1">
+                                <span class="text-[9px] text-gray-400">Synced</span>
+                                <i class="ph-fill ph-check-circle text-gray-400 text-xs"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-[#2C2C2C] p-3 rounded-xl border border-gray-700 flex flex-col justify-center">
+                        <div class="text-[10px] text-gray-500 mb-1">ID: 1344295024</div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-sm">Light 5</span>
+                            <div class="flex items-center gap-1">
+                                <span class="text-[9px] text-gray-400">Synced</span>
+                                <i class="ph-fill ph-check-circle text-gray-400 text-xs"></i>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="bg-[#2C2C2C] p-3 rounded-xl border border-gray-700 flex flex-col justify-center">
+                        <div class="text-[10px] text-gray-500 mb-1">ID: 1344295024</div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-sm">Light 6</span>
+                            <div class="flex items-center gap-1">
+                                <span class="text-[9px] text-gray-400">Synced</span>
+                                <i class="ph-fill ph-check-circle text-gray-400 text-xs"></i>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="bg-[#2C2C2C] p-3 rounded-xl border border-gray-700 flex flex-col justify-center">
+                        <div class="text-[10px] text-gray-500 mb-1">ID: 1344295024</div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-sm">Light 7</span>
+                            <div class="flex items-center gap-1">
+                                <span class="text-[9px] text-gray-400">Synced</span>
+                                <i class="ph-fill ph-check-circle text-gray-400 text-xs"></i>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="bg-[#2C2C2C] p-3 rounded-xl border border-gray-700 flex flex-col justify-center">
+                        <div class="text-[10px] text-gray-500 mb-1">ID: 1344295024</div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-sm">Light 8</span>
+                            <div class="flex items-center gap-1">
+                                <span class="text-[9px] text-gray-400">Synced</span>
+                                <i class="ph-fill ph-check-circle text-gray-400 text-xs"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="devices-zoomed-view" class="hidden flex-col space-y-2 h-full overflow-y-auto pr-1 custom-scroll pb-2">
+                    <div class="flex items-center gap-2">
+                        <div class="bg-[#2C2C2C] p-2 rounded-xl border border-gray-700 w-1/3 flex-shrink-0">
+                            <div class="text-[10px] text-gray-500">ID: 1344295024</div>
+                            <div class="flex justify-between items-center mt-1">
+                                <span class="font-bold text-sm">Light 1</span>
+                                <i class="ph-fill ph-check-circle text-gray-400 text-xs"></i>
+                            </div>
+                        </div>
+                        <div class="bg-[#2C2C2C] p-2 rounded-xl border border-gray-700 w-1/3 flex-shrink-0">
+                            <div class="text-[10px] text-gray-500">ID: 1344295024</div>
+                            <div class="flex justify-between items-center mt-1">
+                                <span class="font-bold text-xs text-green-500">ONLINE</span>
+                                <span class="text-[9px] text-gray-400 flex items-center gap-1">Synced <i class="ph-fill ph-check-circle"></i></span>
+                            </div>
+                        </div>
+                        <div class="flex-1 text-[10px] leading-tight">
+                            <div class="flex justify-between"><span class="font-bold text-green-500">ONTIME</span> <span class="text-gray-300">12:05:56</span></div>
+                            <div class="flex justify-between"><span class="font-bold text-red-500">OFFTIME</span> <span class="text-gray-300">06:05:02</span></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="bg-[#2C2C2C] p-2 rounded-xl border border-gray-700 w-1/3 flex-shrink-0">
+                            <div class="text-[10px] text-gray-500">ID: 1344295024</div>
+                            <div class="flex justify-between items-center mt-1">
+                                <span class="font-bold text-sm">Light 2</span>
+                                <i class="ph-fill ph-check-circle text-gray-400 text-xs"></i>
+                            </div>
+                        </div>
+                        <div class="bg-[#2C2C2C] p-2 rounded-xl border border-gray-700 w-1/3 flex-shrink-0">
+                            <div class="text-[10px] text-gray-500">ID: 1344295024</div>
+                            <div class="flex justify-between items-center mt-1">
+                                <span class="font-bold text-xs text-green-500">ONLINE</span>
+                                <span class="text-[9px] text-gray-400 flex items-center gap-1">Synced <i class="ph-fill ph-check-circle"></i></span>
+                            </div>
+                        </div>
+                        <div class="flex-1 text-[10px] leading-tight">
+                            <div class="flex justify-between"><span class="font-bold text-green-500">ONTIME</span> <span class="text-gray-300">15:25:51</span></div>
+                            <div class="flex justify-between"><span class="font-bold text-red-500">OFFTIME</span> <span class="text-gray-300">02:04:01</span></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="bg-[#2C2C2C] p-2 rounded-xl border border-gray-700 w-1/3 flex-shrink-0">
+                            <div class="text-[10px] text-gray-500">ID: 1344295024</div>
+                            <div class="flex justify-between items-center mt-1">
+                                <span class="font-bold text-sm">Light 3</span>
+                                <i class="ph-fill ph-check-circle text-gray-400 text-xs"></i>
+                            </div>
+                        </div>
+                        <div class="bg-[#2C2C2C] p-2 rounded-xl border border-gray-700 w-1/3 flex-shrink-0">
+                            <div class="text-[10px] text-gray-500">ID: 1344295024</div>
+                            <div class="flex justify-between items-center mt-1">
+                                <span class="font-bold text-xs text-green-500">ONLINE</span>
+                                <span class="text-[9px] text-gray-400 flex items-center gap-1">Synced <i class="ph-fill ph-check-circle"></i></span>
+                            </div>
+                        </div>
+                        <div class="flex-1 text-[10px] leading-tight">
+                            <div class="flex justify-between"><span class="font-bold text-green-500">ONTIME</span> <span class="text-gray-300">15:25:52</span></div>
+                            <div class="flex justify-between"><span class="font-bold text-red-500">OFFTIME</span> <span class="text-gray-300">12:02:02</span></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="bg-[#2C2C2C] p-2 rounded-xl border border-gray-700 w-1/3 flex-shrink-0">
+                            <div class="text-[10px] text-gray-500">ID: 1344295024</div>
+                            <div class="flex justify-between items-center mt-1">
+                                <span class="font-bold text-sm">Light 4</span>
+                                <i class="ph-fill ph-check-circle text-gray-400 text-xs"></i>
+                            </div>
+                        </div>
+                        <div class="bg-[#2C2C2C] p-2 rounded-xl border border-gray-700 w-1/3 flex-shrink-0">
+                            <div class="text-[10px] text-gray-500">ID: 1344295024</div>
+                            <div class="flex justify-between items-center mt-1">
+                                <span class="font-bold text-xs text-green-500">ONLINE</span>
+                                <span class="text-[9px] text-gray-400 flex items-center gap-1">Synced <i class="ph-fill ph-check-circle"></i></span>
+                            </div>
+                        </div>
+                        <div class="flex-1 text-[10px] leading-tight">
+                            <div class="flex justify-between"><span class="font-bold text-green-500">ONTIME</span> <span class="text-gray-300">21:15:48</span></div>
+                            <div class="flex justify-between"><span class="font-bold text-red-500">OFFTIME</span> <span class="text-gray-300">02:02:45</span></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="bg-[#2C2C2C] p-2 rounded-xl border border-gray-700 w-1/3 flex-shrink-0">
+                            <div class="text-[10px] text-gray-500">ID: 1344295024</div>
+                            <div class="flex justify-between items-center mt-1">
+                                <span class="font-bold text-sm">Light 5</span>
+                                <i class="ph-fill ph-check-circle text-gray-400 text-xs"></i>
+                            </div>
+                        </div>
+                        <div class="bg-[#2C2C2C] p-2 rounded-xl border border-gray-700 w-1/3 flex-shrink-0">
+                            <div class="text-[10px] text-gray-500">ID: 1344295024</div>
+                            <div class="flex justify-between items-center mt-1">
+                                <span class="font-bold text-xs text-red-500">OFFLINE</span>
+                                <span class="text-[9px] text-gray-400 flex items-center gap-1">Synced <i class="ph-fill ph-check-circle"></i></span>
+                            </div>
+                        </div>
+                        <div class="flex-1 text-[10px] leading-tight">
+                            <div class="flex justify-between"><span class="font-bold text-green-500">ONTIME</span> <span class="text-gray-300">15:25:25</span></div>
+                            <div class="flex justify-between"><span class="font-bold text-red-500">OFFTIME</span> <span class="text-gray-300">02:05:46</span></div>
+                        </div>
+                    </div>
+                     <div class="flex items-center gap-2">
+                        <div class="bg-[#2C2C2C] p-2 rounded-xl border border-gray-700 w-1/3 flex-shrink-0">
+                            <div class="text-[10px] text-gray-500">ID: 1344295024</div>
+                            <div class="flex justify-between items-center mt-1">
+                                <span class="font-bold text-sm">Light 6</span>
+                                <i class="ph-fill ph-check-circle text-gray-400 text-xs"></i>
+                            </div>
+                        </div>
+                        <div class="bg-[#2C2C2C] p-2 rounded-xl border border-gray-700 w-1/3 flex-shrink-0">
+                            <div class="text-[10px] text-gray-500">ID: 1344295024</div>
+                            <div class="flex justify-between items-center mt-1">
+                                <span class="font-bold text-xs text-green-500">ONLINE</span>
+                                <span class="text-[9px] text-gray-400 flex items-center gap-1">Synced <i class="ph-fill ph-check-circle"></i></span>
+                            </div>
+                        </div>
+                        <div class="flex-1 text-[10px] leading-tight">
+                            <div class="flex justify-between"><span class="font-bold text-green-500">ONTIME</span> <span class="text-gray-300">14:27:18</span></div>
+                            <div class="flex justify-between"><span class="font-bold text-red-500">OFFTIME</span> <span class="text-gray-300">03:12:15</span></div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="bg-[#2C2C2C] p-2 rounded-xl border border-gray-700 w-1/3 flex-shrink-0">
+                            <div class="text-[10px] text-gray-500">ID: 1344295024</div>
+                            <div class="flex justify-between items-center mt-1">
+                                <span class="font-bold text-sm">Light 7</span>
+                                <i class="ph-fill ph-check-circle text-gray-400 text-xs"></i>
+                            </div>
+                        </div>
+                        <div class="bg-[#2C2C2C] p-2 rounded-xl border border-gray-700 w-1/3 flex-shrink-0">
+                            <div class="text-[10px] text-gray-500">ID: 1344295024</div>
+                            <div class="flex justify-between items-center mt-1">
+                                <span class="font-bold text-xs text-green-500">ONLINE</span>
+                                <span class="text-[9px] text-gray-400 flex items-center gap-1">Synced <i class="ph-fill ph-check-circle"></i></span>
+                            </div>
+                        </div>
+                        <div class="flex-1 text-[10px] leading-tight">
+                            <div class="flex justify-between"><span class="font-bold text-green-500">ONTIME</span> <span class="text-gray-300">15:02:23</span></div>
+                            <div class="flex justify-between"><span class="font-bold text-red-500">OFFTIME</span> <span class="text-gray-300">04:01:58</span></div>
+                        </div>
+                    </div>
+                     <div class="flex items-center gap-2">
+                        <div class="bg-[#2C2C2C] p-2 rounded-xl border border-gray-700 w-1/3 flex-shrink-0">
+                            <div class="text-[10px] text-gray-500">ID: 1344295024</div>
+                            <div class="flex justify-between items-center mt-1">
+                                <span class="font-bold text-sm">Light 8</span>
+                                <i class="ph-fill ph-check-circle text-gray-400 text-xs"></i>
+                            </div>
+                        </div>
+                        <div class="bg-[#2C2C2C] p-2 rounded-xl border border-gray-700 w-1/3 flex-shrink-0">
+                            <div class="text-[10px] text-gray-500">ID: 1344295024</div>
+                            <div class="flex justify-between items-center mt-1">
+                                <span class="font-bold text-xs text-red-500">OFFLINE</span>
+                                <span class="text-[9px] text-gray-400 flex items-center gap-1">Synced <i class="ph-fill ph-check-circle"></i></span>
+                            </div>
+                        </div>
+                        <div class="flex-1 text-[10px] leading-tight">
+                            <div class="flex justify-between"><span class="font-bold text-green-500">ONTIME</span> <span class="text-gray-300">07:45:10</span></div>
+                            <div class="flex justify-between"><span class="font-bold text-red-500">OFFTIME</span> <span class="text-gray-300">06:05:02</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="heatmap-section" class="px-6 mt-6 mb-24 text-center transition-all duration-300">
+            <div class="flex items-center justify-between mb-2">
+                <h2 id="monitor-title" class="text-sm font-bold uppercase tracking-wider transition-all duration-300">MLX90640 HEAT MAP</h2>
+                <button id="toggle-view-btn" onclick="toggleView()" class="p-1.5 bg-[#3A3A3A] hover:bg-[#4a4a4a] rounded-lg text-gray-300 transition-colors focus:outline-none">
+                    <i id="toggle-icon" class="ph-bold ph-terminal-window text-lg"></i>
+                </button>
+            </div>
+            <div class="w-full h-48 relative overflow-hidden rounded-sm border-2 border-white/10 bg-[#0d0d0d]">
+                <div id="heatmap-view" class="w-full h-full absolute inset-0 transition-opacity duration-300 ease-in-out opacity-100 z-10">
+                    <img src="bixo1.png" alt="Thermal Feed" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 h-4 bg-white flex items-center px-1">
+                        <div class="text-[8px] text-black font-mono">MLX90640 Interpolated Thermal Feed</div>
+                    </div>
+                </div>
+                <div id="terminal-view" class="w-full h-full absolute inset-0 bg-[#121212] p-2 text-left overflow-y-auto custom-scroll opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-0">
+                    <div class="terminal-font terminal-text space-y-0.5">
+                        <div class="text-red-400">E (135768) i2c.master: I2C transaction unexpected nack detected</div>
+                        <div class="text-red-400">E (135774) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed</div>
+                        <div class="text-red-400">E (135781) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed</div>
+                        <div class="text-red-400">E (135788) i2c.master: I2C transaction unexpected nack detected</div>
+                        <div class="text-red-400">E (135794) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed</div>
+                        <div class="text-red-400">E (135801) i2c.master: i2c_master_transmit_receive(1248): I2C transaction failed</div>
+                        <div class="text-red-400">E (135808) i2c.master: I2C transaction unexpected nack detected</div>
+                        <div class="text-red-400">E (135814) i2c.master: s_i2c_synchronous_transaction(945): I2C transaction failed</div>
+                        <div class="text-gray-400 mt-2">MLX90640 started successfully.</div>
+                        <div class="text-gray-400">Connecting to WiFi.....</div>
+                        <div class="text-green-500">Connected! Access at http://192.168.29.6</div>
+                        <span class="inline-block w-1.5 h-3 bg-gray-400 animate-pulse align-middle"></span>
+                    </div>
+                </div>
+                <div class="absolute inset-0 scanlines w-full h-full z-20"></div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 w-full pb-8 pt-4 px-6 bg-gradient-to-t from-[#1E1E1E] via-[#1E1E1E] to-transparent flex items-center justify-between gap-4 z-30">
+            <button class="flex items-center space-x-2 bg-[#3A3A3A] hover:bg-[#4a4a4a] transition px-4 py-3 rounded-xl text-sm font-bold flex-1 justify-center shadow-lg">
+                <span>Sync new device ?</span>
+                <i class="ph-fill ph-plus-circle text-gray-400 text-lg"></i>
+            </button>
+            <button class="px-6 py-3 rounded-xl text-sm font-bold text-[#D97736] bg-[#2C221C] border border-[#D97736]/30 hover:bg-[#3a2a20] transition shadow-lg">
+                CONTINUE
+            </button>
+        </div>
+        <div class="absolute bottom-0 w-full h-2 bg-[#D97736] z-30"></div>
+    </div>
+    <script>
+        
+        let isTerminalView = false;
+        function toggleView() {
+            const heatmapView = document.getElementById('heatmap-view');
+            const terminalView = document.getElementById('terminal-view');
+            const title = document.getElementById('monitor-title');
+            const icon = document.getElementById('toggle-icon');
+            isTerminalView = !isTerminalView;
+            if (isTerminalView) {
+              
+                heatmapView.classList.remove('opacity-100', 'z-10');
+                heatmapView.classList.add('opacity-0', 'z-0', 'pointer-events-none');
+                terminalView.classList.remove('opacity-0', 'z-0', 'pointer-events-none');
+                terminalView.classList.add('opacity-100', 'z-10');
+                title.textContent = "Integrated Terminal response";
+                icon.classList.remove('ph-terminal-window');
+                icon.classList.add('ph-image'); 
+            } else {
+               
+                terminalView.classList.remove('opacity-100', 'z-10');
+                terminalView.classList.add('opacity-0', 'z-0', 'pointer-events-none');
+                heatmapView.classList.remove('opacity-0', 'z-0', 'pointer-events-none');
+                heatmapView.classList.add('opacity-100', 'z-10');
+                title.textContent = "MLX90640 HEAT MAP";
+                icon.classList.remove('ph-image');
+                icon.classList.add('ph-terminal-window');
+            }
+        }
+
+        let isZoomedView = false;
+        function toggleDeviceZoom() {
+            const standardView = document.getElementById('devices-standard-view');
+            const zoomedView = document.getElementById('devices-zoomed-view');
+            const zoomIcon = document.getElementById('zoom-icon');
+            const heatmapSection = document.getElementById('heatmap-section');
+            isZoomedView = !isZoomedView;
+            if (isZoomedView) {
+
+                standardView.classList.add('hidden');
+                zoomedView.classList.remove('hidden');
+                zoomedView.classList.add('flex');
+
+                heatmapSection.style.display = 'none';
+   
+                zoomIcon.classList.remove('ph-magnifying-glass-plus');
+                zoomIcon.classList.add('ph-magnifying-glass-minus');
+            } else {
+   
+                zoomedView.classList.add('hidden');
+                zoomedView.classList.remove('flex');
+                standardView.classList.remove('hidden');
+       
+                heatmapSection.style.display = 'block';
+
+                zoomIcon.classList.remove('ph-magnifying-glass-minus');
+                zoomIcon.classList.add('ph-magnifying-glass-plus');
+            }
+        }
+    </script>
+</body>
+</html>
